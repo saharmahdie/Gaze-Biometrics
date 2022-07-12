@@ -1,0 +1,7 @@
+numpy
+scipy
+pandas
+python-dotenv
+scikit-learn>=0.21
+joblib
+numpy-indexed

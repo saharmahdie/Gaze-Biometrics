@@ -1,0 +1,24 @@
+diff --git a/docker/Dockerfile b/docker/Dockerfile
+index 3a021f1..29460e5 100644
+--- a/docker/Dockerfile
++++ b/docker/Dockerfile
+@@ -23,15 +23,15 @@ ENV LC_ALL=C.UTF-8
+ ENV LANG=C.UTF-8
+ 
+ # Create a non-root user and switch to it
+-ARG UID
+-RUN adduser --disabled-password  -u $UID --gecos '' --shell /bin/bash docker
+-RUN echo "docker ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-user
++#ARG UID
++#RUN adduser --disabled-password  -u $UID --gecos '' --shell /bin/bash docker
++#RUN echo "docker ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-user
+ 
+ COPY ./requirements.txt /requirements.txt
+ RUN pip install -r /requirements.txt
+ 
+ WORKDIR /work
+-USER docker
++#USER docker
+ 
+ 
+ ENTRYPOINT ["/bin/bash"]
